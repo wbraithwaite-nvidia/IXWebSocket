@@ -17,6 +17,8 @@
 #include <cstdint>
 #include <string.h>
 
+#include "psa/crypto.h"
+
 #ifdef _WIN32
 // For manipulating the certificate store
 #include <wincrypt.h>

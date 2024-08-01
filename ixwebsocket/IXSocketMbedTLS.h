@@ -15,6 +15,7 @@
 #include <mbedtls/error.h>
 #include <mbedtls/net_sockets.h>
 #include <mbedtls/platform.h>
+#include <mbedtls/version.h>
 #include <mbedtls/x509.h>
 #include <mbedtls/x509_crt.h>
 #include <mutex>
