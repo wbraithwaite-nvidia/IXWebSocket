@@ -57,15 +57,18 @@ namespace ix
                 // since we use an std::string later on and don't account for '\0',
                 // plus the optional first space, total is -2
                 int start = colon + 1;
-                while (lineStr[start] == ' ')
+                while (start < lineStr.size() && lineStr[start] == ' ')
                 {
                     start++;
                 }
 
-                std::string name(lineStr.substr(0, colon));
-                std::string value(lineStr.substr(start, lineStr.size() - start - 2));
+                if (start < lineStr.size())
+                {
+                    std::string name(lineStr.substr(0, colon));
+                    std::string value(lineStr.substr(start, lineStr.size() - start - 2));
 
-                headers[name] = value;
+                    headers[name] = value;
+                }
             }
         }
 
